@@ -41,6 +41,12 @@ void printNoiseMenu(appData * app){
                 mvprintw( 3, 2, "🍃 ");
                 mvprintw( 4, 2, "⚡ ");
             }
+			else if(strcmp(ICONS, "custom") == 0){
+                mvprintw( 1, 2, "☔ ");
+                mvprintw( 2, 2, "🔥 ");
+                mvprintw( 3, 2, "🍃 ");
+                mvprintw( 4, 2, "⚡ ");
+            }
             else{
                 mvprintw( 1, 2, "R ");
                 mvprintw( 2, 2, "F ");
@@ -468,6 +474,10 @@ void printResume(appData * app){
                      app->unfinishedPomodoroCounter, app->unfinishedPomodoros, app->unfinishedTimer, app->unfinishedFullTimer);
         }
         else if(strcmp(ICONS, "iconson") == 0){
+            mvprintw((app->middley - 1), (app->middlex - 16), " %d/%d🍅                    %02d/%02dm ",
+                     app->unfinishedPomodoroCounter, app->unfinishedPomodoros, app->unfinishedTimer, app->unfinishedFullTimer);
+        }
+		else if(strcmp(ICONS, "custom") == 0){
             mvprintw((app->middley - 1), (app->middlex - 16), " %d/%d🍅                    %02d/%02dm ",
                      app->unfinishedPomodoroCounter, app->unfinishedPomodoros, app->unfinishedTimer, app->unfinishedFullTimer);
         }

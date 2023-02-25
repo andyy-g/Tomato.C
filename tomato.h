@@ -11,7 +11,6 @@
 #ifndef TOMATO_H_
 #define TOMATO_H_
 #include <ncurses.h>
-#include <mpv/client.h>
 
 /* Defining the app struct */
 typedef struct appData appData;

@@ -21,7 +21,7 @@ static const int WSL = 0;
 /* iconsoff - iconson - nerdicons
  * Note: you'll need a patched 
  * nerdicons for that option */
-static const char * ICONS = "nerdicons";
+static const char * ICONS = "custom";
 
 /* 1 means notifications on, 0 off
  * Note: you'll need libnotify if you're at linux*/
@@ -29,7 +29,7 @@ static const int NOTIFY = 1;
 
 /* 1 means notification sound on, 0 off 
  * Note: you'll need mpv */
-static const int SOUND = 1;
+//static const int SOUND = 1;
 
 /* 1 means noises on, 0 off
  * Note: you'll need mpv */

@@ -7,9 +7,11 @@
 #  `'							  
 # Makefile
 
+DESTDIR := ./build
+
 include config.mk
 
-all: tomato tomatonoise
+all: tomato
 
 tomatonoise: tomatonoise.c
 
@@ -35,7 +37,7 @@ clean:
 install: all
 	mkdir -p ${DESTDIR}${PREFIX}/bin
 	cp -f tomato ${DESTDIR}${PREFIX}/bin
-	cp -f tomatonoise ${DESTDIR}${PREFIX}/bin
+	#cp -f tomatonoise ${DESTDIR}${PREFIX}/bin
 	mkdir -p ${DESTDIR}${APPPREFIX}
 	cp -f tomato.desktop ${DESTDIR}${APPPREFIX}
 	mkdir -p ${DESTDIR}${PREFIX}/share/tomato
@@ -43,9 +45,9 @@ install: all
 	mkdir -p ${DESTDIR}${PREFIX}/share/tomato/icons
 	cp -rf sounds ${DESTDIR}${PREFIX}/share/tomato/
 	sed -i "s|Icon=.*|Icon=${DESTDIR}${PREFIX}/share/tomato/icons/tomato.svg|" tomato.desktop
-	sudo cp -f icons/tomato.svg ${DESTDIR}${PREFIX}/share/tomato/icons
+	cp -f icons/tomato.svg ${DESTDIR}${PREFIX}/share/tomato/icons
 	chmod 755 ${DESTDIR}${PREFIX}/bin/tomato
-	chmod 755 ${DESTDIR}${PREFIX}/bin/tomatonoise
+	#chmod 755 ${DESTDIR}${PREFIX}/bin/tomatonoise
 
 uninstall:
 	rm -f ${DESTDIR}${PREFIX}/bin/tomato

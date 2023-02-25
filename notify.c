@@ -46,8 +46,6 @@ void notify(const char * message){
                 system("notify-send -t 5000 -c Tomato.C \'Work! You need to focus\'");
         }
     #endif
-        if(SOUND == 1 && WSL == 0)
-            system("mpv --no-vid --no-input-terminal --volume=50 /usr/local/share/tomato/sounds/dfltnotify.mp3 --really-quiet &");
     }
     /* Short Pause notification */
     else if(strcmp(message, "shortpause") == 0){
@@ -70,8 +68,6 @@ void notify(const char * message){
                 system("notify-send -t 5000 -c Tomato.C \'Pause Break. You have some time to chill\'");
         }
     #endif
-        if(SOUND == 1 && WSL == 0)
-            system("mpv --no-vid --no-input-terminal --volume=50 /usr/local/share/tomato/sounds/pausenotify.mp3 --really-quiet &");
     }
     /* Long Pause notification */
     else if(strcmp(message, "longpause") == 0){
@@ -94,8 +90,6 @@ void notify(const char * message){
                 system("notify-send -t 5000 -c Tomato.C \'Long Pause Break. You have some time to chill\'");
         }
     #endif
-        if(SOUND == 1 && WSL == 0)
-            system("mpv --no-vid --no-input-terminal --volume=50 /usr/local/share/tomato/sounds/pausenotify.mp3 --really-quiet &");
     }
     /* End of cycle notification */
     else{
@@ -118,7 +112,5 @@ void notify(const char * message){
                 system("notify-send -t 5000 -c Tomato.C \'End of Pomodoro Cycle. Feel free to start another!\'");
         }
     #endif
-        if(SOUND == 1 && WSL == 0)
-            system("mpv --no-vid --no-input-terminal --volume=50 /usr/local/share/tomato/sounds/endnotify.mp3 --really-quiet &");
     }
 }
